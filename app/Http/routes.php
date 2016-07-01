@@ -21,6 +21,8 @@ Route::post('oauth/access_token', function() {
 
 Route::group(['middleware' => 'oauth'], function() {
 
+	Route::resource('produto', 'ProdutoController', ['except' => ['create', 'edit']]);
+
 	// Estoque dos produtos
 	Route::get('produto/{id}/estoque', 'EstoqueController@index');
 	Route::get('produto/{id}/estoque/{idLoja}', 'EstoqueController@show');
@@ -33,7 +35,6 @@ Route::group(['middleware' => 'oauth'], function() {
 	Route::match(['patch', 'put'], 'os/{id}/itens/{idPro}', 'OsItemProController@update');
 	Route::delete('os/{id}/itens/{idPro}', 'OsItemProController@destroy');
 
-	Route::resource('produto', 'ProdutoController', ['except' => ['create', 'edit']]);
 	Route::resource('cliente', 'ClienteController', ['except' => ['create', 'edit']]);
 	Route::resource('os', 'OsController', ['except' => ['create', 'edit']]);
 	Route::resource('grupo', 'GrupoController', ['except' => ['create', 'edit']]);
