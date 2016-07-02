@@ -36,6 +36,5 @@ class Produto extends FirebirdModel
 
 	protected $primaryKey = 'CODPRO';
 
-	public $selectable = ['CODPRO', 'DESCRICAO', 'SITE', 'PRECOVENDA', 'PESOBRUTO', 'DESCRICAOSITE', 'DATAALT',
-	'CODBARRAS', 'CODIGONUM', 'CODMAR', 'CODGRU'];
+	public $selectable = ['CODPRO', 'DESCRICAO'];
 }

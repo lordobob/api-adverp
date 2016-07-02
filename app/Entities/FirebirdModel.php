@@ -3,7 +3,7 @@
 namespace App\Entities;
 
 use Illuminate\Database\Eloquent\Model;
-use DB;
+use App\Services\Database\ChangeConnection;
 
 abstract class FirebirdModel extends Model
 {
@@ -15,6 +15,11 @@ abstract class FirebirdModel extends Model
 	protected $connection = 'firebird';
 
 	public $timestamps = false;
+
+	public function __construct()
+	{
+		ChangeConnection::apply($this->connection);
+	}
 
 	/*
 	 * Para corrigir o bug "The Response content must be a string or object implementing __toString(), boolean given"
