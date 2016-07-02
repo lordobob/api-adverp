@@ -10,5 +10,7 @@ class Marca extends FirebirdModel
 	protected $table = 'MARCAS';
 
 	protected $primaryKey = 'CODMAR';
+	
+	public $selectable = ['CODMAR','DATAALT','MARCA'];
 
 }

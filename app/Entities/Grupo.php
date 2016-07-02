@@ -11,6 +11,6 @@ class Grupo extends FirebirdModel
 
 	protected $primaryKey = 'CODGRU';
 
-	public $selectable = ['CODGRU', 'GRUPO'];
+	public $selectable = ['CODGRU','DATAALT','GRUPO'];
 
 }
